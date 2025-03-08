@@ -2,28 +2,28 @@
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
+    
+        "version": "0.2.0",
+        "configurations": [
+          {
+            "name": "Debug with TDM-GCC",
             "type": "cppdbg",
             "request": "launch",
-            "name": "Debug",
-            "program": "${workspaceFolder}/${defaultBuildTask}/bin/observer",
-            "args": ["-f", "${workspaceFolder}/etc/observer.ini", "-P", "cli"],
-            "cwd": "${workspaceFolder}/${defaultBuildTask}/",
-            "internalConsoleOptions": "openOnSessionStart",
-            "osx": {
-                "MIMode": "lldb",
-                "externalConsole":true
-            }
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "LLDB",
-            "program": "${workspaceFolder}/${defaultBuildTask}/bin/observer",
-            "args": ["-f", "${workspaceFolder}/etc/observer.ini", "-P", "cli"],
-            "cwd": "${workspaceFolder}/${defaultBuildTask}/"
-        }
-    ]
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "E:/devcpp/Dev-Cpp/TDM-GCC-64/bin/gdb.exe",
+            "setupCommands": [
+              {
+                "description": "Enable pretty-printing",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+              }
+            ]
+          }
+        ]
 }
